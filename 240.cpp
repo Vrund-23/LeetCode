@@ -36,3 +36,18 @@
         }
         return false;
     }
+
+     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        // TC -> O(m + n) SC -> O(1);
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        if(matrix[0][0]>target || matrix[rows-1][cols-1]<target) return false;
+        // row-wise search
+        int r = 0, c = cols-1;
+        while(r<rows && c>=0){
+            if(matrix[r][c]==target) return true;
+            else if(matrix[r][c]>target) c--;
+            else r++;
+        }
+        return false;
+    }
