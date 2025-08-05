@@ -51,4 +51,4 @@ bool dfs(int node,int d,vector<int> adj[],vector<int> &vis){
             }
         }
         return false;
-    }
+    }   
